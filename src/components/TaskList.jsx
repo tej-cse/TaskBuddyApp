@@ -3,8 +3,7 @@ import React from "react";
 function TaskList({ tasks, updateTask, deleteTask }) {
 
   const toggleComplete = (index) => {
-    //Q: why we used spread operator here , that is "...tasks[index]" ? why not directly tasks[index]
-    //   
+    
     const updatedTask = { ...tasks[index], completed: !tasks[index].completed };
     updateTask(index, updatedTask);
 
@@ -27,6 +26,8 @@ function TaskList({ tasks, updateTask, deleteTask }) {
               {task.completed ? "Undo" : "Complete"}
 
             </button>
+
+            
 
             <button onClick={() => deleteTask(index)}>Delete</button> 
 

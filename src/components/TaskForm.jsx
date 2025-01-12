@@ -41,12 +41,12 @@ function TaskForm({addTask}) {
             </div>
 
             <div id="btns">
-                <select onChange={(e)=>setPriority(e.target.value)}>
+                <select onChange={(e)=>setPriority(e.target.value)} value={priority}>
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
                     <option value="Low">Low</option>
                 </select>
-                <select onChange={(e)=>setCategory(e.target.value)}>
+                <select onChange={(e)=>setCategory(e.target.value)}value={category}>
                     <option value="General">General</option>
                     <option value="Work">Work</option>
                     <option value="personal">Personal</option>

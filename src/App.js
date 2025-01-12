@@ -22,16 +22,19 @@ export default function App(){
 
   const updateTask = (index, updatedTask) => {
     const newTasks = [...tasks];
-    //Q: why to declare a new variable and use spread opertor 
-    //Q: why not direct , tasks[index] = updateTask
-
     newTasks[index] = updatedTask;
     setTasks(newTasks);
   };
 
  
   const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+    if (window.confirm("Are you sure you want to delete this item?")) {
+      // Perform the delete action
+      setTasks(tasks.filter((_, i) => i !== index));
+    } else {
+      console.log("Deletion canceled.");
+    }
+    
   };
 
   const clearTask = () => {
