@@ -10,9 +10,12 @@ export default function App(){
   //The second argument to useEffect, [tasks], is a dependency array. 
   //This tells React that the effect should run whenever the tasks state changes.
 
+  //if its empty "[]" , it signifies that only when the page renders first time , the effect should run
+
   //So, each time tasks is updated, React will implicitly call useEffect again 
   //and run the effect,which in this case updates localStorage with the new value of tasks.
   useEffect( () => {
+    //JSON.stringfy converts JSON object to JSON String
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
